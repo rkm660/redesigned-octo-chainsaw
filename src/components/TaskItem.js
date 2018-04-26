@@ -3,21 +3,19 @@ import PropTypes from 'prop-types';
 
 class TaskItem extends Component {
 
-  render() {
-  		return (
-	      <div>
-	        {this.props.id}
-	      </div>
-    );
-  }
+    render() {
+        return (
+            <span onClick={this.handleClick}>{this.props.task} {this.props.completedAt}</span>
+        );
+    }
 }
 
 TaskItem.propTypes = {
- 	id: PropTypes.number,
-  group: PropTypes.string,
-  task: PropTypes.string,
-  dependencyIds: PropTypes.array,
-  completedAt: PropTypes.number
+    id: PropTypes.number,
+    group: PropTypes.string,
+    task: PropTypes.string,
+    dependencyIds: PropTypes.array,
+    completedAt: PropTypes.number,
 };
 
 export default TaskItem;

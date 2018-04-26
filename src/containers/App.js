@@ -8,14 +8,28 @@ class App extends Component {
 
   componentDidMount(){
       this.props.taskActions.fetchTasks()
+      this.handleGroupClick = this.handleGroupClick.bind(this);
+      this.handleTaskClick = this.handleTaskClick.bind(this);
+  }
+
+  handleGroupClick(group){
+    console.log(group);
+    this.props.taskActions.toggleGroupVisibility(group);
+  }
+
+  handleTaskClick(group, taskID){
+    console.log(group, taskID);
+    this.props.taskActions.toggleTask(group, taskID);
   }
 
   render() {
     return (
-      <div className="App">
+      <div>
           <h1>Things To Do</h1>
           <TaskList
             tasks={this.props.tasks}
+            onGroupClick={this.handleGroupClick}
+            onTaskClick={this.handleTaskClick}
           />
       </div>
     );
@@ -23,7 +37,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     tasks: state.TaskReducer.tasks
   }

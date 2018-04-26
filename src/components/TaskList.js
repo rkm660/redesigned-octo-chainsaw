@@ -4,19 +4,31 @@ import TaskGroup from './TaskGroup';
 
 class TaskList extends Component {
 
-  render() {
-  		return (
-	      <div>
+    constructor(props) {
+        super(props);
+        this.handleGroupClick = this.handleGroupClick.bind(this);
+    }
+
+    handleGroupClick(group,e) {
+    	e.preventDefault();
+    	this.props.onGroupClick(group);
+    }
+
+    render() {
+        return (
+            <ul>
 	        {Object.keys(this.props.tasks).map((group) => {
-              return (<TaskGroup key={group} group={group} groupTasks={this.props.tasks[group]}/>);
+              return (<li key={group}><span onClick={(e) => this.handleGroupClick(group, e)}>{group}</span><TaskGroup key={group} group={group} groupTasks={this.props.tasks[group].groupTasks} onTaskClick={this.props.onTaskClick}/></li>);
           })}
-	      </div>
-     );
-  }
+	      </ul>
+        );
+    }
 }
 
 TaskList.propTypes = {
- 	tasks: PropTypes.object
+ 	tasks: PropTypes.object,
+ 	onGroupClick: PropTypes.func,
+ 	onTaskClick: PropTypes.func
 };
 
 export default TaskList;
