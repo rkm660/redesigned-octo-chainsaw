@@ -1,1 +1,1 @@
-Wonderschool Challenge - Task List
+Task List

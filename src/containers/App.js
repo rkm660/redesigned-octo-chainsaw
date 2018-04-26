@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import * as taskActions from '../actions/TaskActions';
+import { connect } from 'react-redux';
 import TaskList from '../components/TaskList';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-        taskData: []
-    };
-}
 
   componentDidMount(){
-      console.log("hello");
+      this.props.taskActions.fetchTasks()
   }
 
   render() {
@@ -18,11 +15,25 @@ class App extends Component {
       <div className="App">
           <h1>Things To Do</h1>
           <TaskList
-            taskData={this.state.taskData}
+            tasks={this.props.tasks}
           />
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    tasks: state.TaskReducer.tasks
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    taskActions: bindActionCreators(taskActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
