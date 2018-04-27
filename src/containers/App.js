@@ -36,7 +36,7 @@ class App extends Component {
                     <h4>Things To Do</h4>
                 </div>
                 <div className="col-md-4 allGroupsButton">
-                    <small onClick={this.handleAllGroupsClick}>ALL GROUPS</small>
+                    <small onClick={this.handleAllGroupsClick}><a href="javascript:void(0);">ALL GROUPS</a></small>
                 </div>
             </div>
             <TaskList

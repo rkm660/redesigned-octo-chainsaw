@@ -6,49 +6,63 @@ html {
 }
 
 @media (min-width: 700px) {
-    .container{
+    .container {
         max-width: 700px;
     }
 }
 
 .container {
-	padding-left: 1%;
-	padding-right: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .pageTitle {
-	text-align: left;
-	padding-left: 0px;
-	padding-right: 0px;
+    text-align: left;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.pageTitle>h4 {
+    font-weight: 300;
+    color: rgba(105, 105, 105, 1);
 }
 
 .allGroupsButton {
-	text-align: right;
-	padding-left: 0px;
-	padding-right: 0px;
-	color: blue;
+    text-align: right;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: blue;
 }
 
 .groupTitle {
-	font-weight: bold;
-	padding-top:10px;
-	padding-left:0px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 0px;
 }
 
 .groupSubtitle {
-	font-size: 80%;
+    font-size: 80%;
     opacity: 0.5;
 }
 
-.taskItem{ 
-  border-bottom: 1px solid; 
-  padding: 10px;
+.taskItem {
+    border-bottom: 1px solid rgba(211, 211, 211, .75);
+    padding: 15px;
 }
+
 .taskItem:last-child {
-  border-bottom: 1px solid; 
+    border-bottom: 1px solid rgba(211, 211, 211, .75);
 }
 
 .GroupSVG {
-	position: relative;
-	top: 10px;
+    position: relative; 
+    top: 10px;
+}
+
+.rotateSVG {
+	transform: rotate(90deg);
+}
+
+a:hover {
+    text-decoration: none;
 }

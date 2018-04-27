@@ -31,7 +31,7 @@ class TaskList extends Component {
                       <div onClick={(e) => this.handleGroupClick(group, e)}>
                           <div className="row groupTitle">
                               <div className="col-md-1">
-                                <img className="GroupSVG" width="7px" height="9px" src={GroupSVG} /> 
+                                <img className={"GroupSVG " + (this.props.tasks[group].isVisible ? 'rotateSVG' : '')} width="7px" height="9px" src={GroupSVG} /> 
                               </div>
                               <div className="col-md-11">
                                 {group}
