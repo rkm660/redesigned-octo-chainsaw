@@ -5,7 +5,7 @@ class TaskItem extends Component {
 
     render() {
         return (
-            <span onClick={this.handleClick}>{this.props.task} {this.props.completedAt}</span>
+            <span onClick={this.handleClick}>{this.props.task}</span>
         );
     }
 }

@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
                     ...state.tasks,
                     [action.group] : {
                         ...state.tasks[action.group],
-                        isVisible : !state.tasks[action.group].isVisible
+                        isVisible : action.bool ? action.bool : !state.tasks[action.group].isVisible
                     } 
                 }
             }
@@ -62,7 +62,7 @@ export default (state = initialState, action) => {
                         ...state.tasks[action.group],
                         groupTasks : state.tasks[action.group].groupTasks.map((task) => {
                             if (task.id === action.taskID){
-                                let isLocked = isTaskLocked(state.tasks, task.dependencyIds, task.id);
+                                let isLocked = task.completedAt === null && task.dependencyIds.length > 0 ? isTaskLocked(state.tasks, task.dependencyIds, task.id) : false;
                                 if (isLocked){
                                     return task;
                                 }

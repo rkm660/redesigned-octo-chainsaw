@@ -1,0 +1,54 @@
+html {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media (min-width: 700px) {
+    .container{
+        max-width: 700px;
+    }
+}
+
+.container {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.pageTitle {
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.allGroupsButton {
+	text-align: right;
+	padding-left: 0px;
+	padding-right: 0px;
+	color: blue;
+}
+
+.groupTitle {
+	font-weight: bold;
+	padding-top:10px;
+	padding-left:0px;
+}
+
+.groupSubtitle {
+	font-size: 80%;
+    opacity: 0.5;
+}
+
+.taskItem{ 
+  border-bottom: 1px solid; 
+  padding: 10px;
+}
+.taskItem:last-child {
+  border-bottom: 1px solid; 
+}
+
+.GroupSVG {
+	position: relative;
+	top: 10px;
+}

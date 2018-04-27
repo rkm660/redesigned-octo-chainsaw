@@ -13,10 +13,11 @@ function receiveTasks(tasks) {
     }
 }
 
-function updateGroupVisibility(group){
+function updateGroupVisibility(group, bool){
 	return {
 		type: UPDATE_GROUP_VISIBILITY,
-		group: group
+		group: group,
+		bool: bool
 	}
 }
 
@@ -34,9 +35,9 @@ export function fetchTasks() {
     }
 }
 
-export function toggleGroupVisibility(group){
+export function toggleGroupVisibility(group, bool=null){
 	return dispatch => {
-		dispatch(updateGroupVisibility(group));
+		dispatch(updateGroupVisibility(group, bool));
 	}
 }
 
